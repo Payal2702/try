@@ -6,7 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello</h1>
-    <h1>hiii</h1>
+    <input type="text" readonly placeholder="enter value" ><br>
+    <button onclick="run(1)" >1</button>
+    <button onclick="run(2)" >2</button>
+    <button onclick="run(3)" >3</button>
+    <button onclick="run('*')" >*</button>
+    <button onclick="eql('=')" >=</button>
+    <button onclick="ac()" >ac</button>
+    <button onclick="clean()" >clean</button>
+    <script>
+        let inp = document.querySelector('input')
+        let run=(e)=>{
+            // console.log(e);
+            inp.value +=e
+        };
+        let eql=()=>{
+            let ab = inp.value;
+            let evl = eval(ab)
+            inp.value = evl
+        };
+        let clean=()=>{
+            let a = inp.value;
+            inp.value = a.slice(0,-1)
+        }
+        let ac =()=>{
+            inp.value=null;
+        };
+    </script>
 </body>
 </html>
